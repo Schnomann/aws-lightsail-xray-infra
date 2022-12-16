@@ -33,18 +33,18 @@ bash <(curl -Ls https://raw.githubusercontent.com/vaxilu/x-ui/master/install.sh)
 
 ## Configure x-ui
 
->出于安全考虑，安装/更新完成后需要强制修改端口与账户密码__
->确认是否继续?[y/n]:y__
->请设置您的账户名:your_username__
->您的账户名将设定为:your_username__
->请设置您的账户密码:your_password__
->您的账户密码将设定为:your_password__
->请设置面板访问端口:12345__
->您的面板访问端口将设定为:12345__
->确认设定,设定中__
->set username and password success__
->账户密码设定完成__
->set port 12345 success面板端口设定完成__
+>出于安全考虑，安装/更新完成后需要强制修改端口与账户密码  
+>确认是否继续?[y/n]:y  
+>请设置您的账户名:your_username  
+>您的账户名将设定为:your_username  
+>请设置您的账户密码:your_password  
+>您的账户密码将设定为:your_password  
+>请设置面板访问端口:12345  
+>您的面板访问端口将设定为:12345  
+>确认设定,设定中  
+>set username and password success  
+>账户密码设定完成  
+>set port 12345 success面板端口设定完成  
 
 ## Add Inbounds
 - Get your instance-ip and port from previous steps
