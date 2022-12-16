@@ -12,30 +12,32 @@ cp terraform.tfvars.test.pipeline terraform.tfvars
 # init
 terraform init
 # see execution plan
-terraform plan -var-file terraform.tfvars
+terraform plan
 # execute
-terraform apply -auto-approve -var-file terraform.tfvars
+terraform apply -auto-approve
 # cleanup
 terraform destroy
 ```
 
-## Upload key-pair
-- Generate a new key-pair
-```sh
-ssh-keygen -t rsa
-```
-- Go to: [https://lightsail.aws.amazon.com/ls/webapp/account/keys](https://lightsail.aws.amazon.com/ls/webapp/account/keys)
-- Upload SSH public key
-
 ## Install x-ui
+[x-ui](https://github.com/vaxilu/x-ui)
 ```sh
 # remote login
-ssh -i /path/to/private-key.pem username@instance-ip
-# root prompt
+# use terraform's output for ssh_to_instance
+sudo ssh -i instance_name_pkey.pem username@ip
+# instance root prompt
 sudo -i
-# install
+# install then follow instructions
 bash <(curl -Ls https://raw.githubusercontent.com/vaxilu/x-ui/master/install.sh)
 ```
 
 ## Configure x-ui
-- Go to: http://instance-ip/xui/inbounds
+- Go to: http://instance-ip:port/xui/inbounds
+
+## When IP is blocked
+```sh
+# destroy previous static IP
+terraform destroy -target aws_lightsail_static_ip.ip
+# attach a new IP
+terraform apply -auto-approve -target aws_lightsail_static_ip_attachment.attachment
+```

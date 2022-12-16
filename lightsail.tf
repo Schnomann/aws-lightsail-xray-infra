@@ -9,18 +9,19 @@ resource "aws_lightsail_instance" "instance" {
   }
 }
 
-resource "tls_private_key" "ed25519-key" {
-  algorithm = "ED25519"
+resource "tls_private_key" "rsa-key" {
+  algorithm = "RSA"
+  rsa_bits  = "4096"
 }
 
 resource "aws_lightsail_key_pair" "lg_key_pair" {
   name = "${lower(var.instance_name)}_lg_key_pair"
-  public_key = tls_private_key.ed25519-key.public_key_openssh
+  public_key = tls_private_key.rsa-key.public_key_openssh
 }
 
 resource "local_file" "private_key" {
-  content         = tls_private_key.ed25519-key.private_key_pem
-  filename        = "${lower(var.instance_name)}_lg_key_pair"
+  content         = tls_private_key.rsa-key.private_key_pem
+  filename        = "${lower(var.instance_name)}_pkey.pem"
   file_permission = "0600"
 }
 
