@@ -4,6 +4,12 @@ variable "aws_profile" {
   default     = "dev"
 }
 
+variable "aws_region" {
+  type        = string
+  description = "AWS region name"
+  default     = "ap-southeast-1"
+}
+
 variable "instance_name" {
   type        = string
   description = "The Instance Name"
@@ -14,12 +20,6 @@ variable "blueprint_id" {
   type        = string
   description = "The blueprint ID; More: aws lightsail get-blueprints"
   default     = "ubuntu_20_04"
-}
-
-variable "available_zone" {
-  type        = string
-  description = "The Availability Zone in which to create your instance"
-  default     = "ap-southeast-1a"
 }
 
 variable "bundle_id" {

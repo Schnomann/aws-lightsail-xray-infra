@@ -11,27 +11,31 @@ cp terraform.tfvars.test.pipeline terraform.tfvars
 
 # init
 terraform init
-
 # see execution plan
 terraform plan -var-file terraform.tfvars
-
 # execute
 terraform apply -auto-approve -var-file terraform.tfvars
-
 # cleanup
 terraform destroy
 ```
 
-## Download key-pair
-- Go to: https://lightsail.aws.amazon.com/ls/webapp/home/instances
-- Select Instance -> Download SSH key
+## Upload key-pair
+- Generate a new key-pair
+```sh
+ssh-keygen -t rsa
+```
+- Go to: [https://lightsail.aws.amazon.com/ls/webapp/account/keys](https://lightsail.aws.amazon.com/ls/webapp/account/keys)
+- Upload SSH public key
 
 ## Install x-ui
 ```sh
 # remote login
-ssh -i /path/to/lightsail.pem username@instanceip
+ssh -i /path/to/private-key.pem username@instance-ip
 # root prompt
 sudo -i
 # install
 bash <(curl -Ls https://raw.githubusercontent.com/vaxilu/x-ui/master/install.sh)
 ```
+
+## Configure x-ui
+- Go to: http://instance-ip/xui/inbounds

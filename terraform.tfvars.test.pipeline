@@ -1,5 +1,5 @@
 aws_profile           = "dev"
+aws_region            = "ap-southeast-1"
 instance_name         = "example"
 blueprint_id          = "ubuntu_20_04"
-available_zone        = "ap-southeast-1a"
 bundle_id             = "nano_2_0"
