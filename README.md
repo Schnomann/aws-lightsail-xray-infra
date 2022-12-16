@@ -2,13 +2,16 @@
 
 ## Prerequisites
 - [AWS account](https://aws.amazon.com/resources/create-account/) and [CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
+- [AWS admin user](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_create.html)
+- [AWS configure](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-quickstart.html)
 - Terraform [CLI](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli)
+
+Have your aws profile configured locally before proceeding.
 
 ## Create Lightsail Instance
 ```sh
 # make terraform.tfvars then edit input variables
 cp terraform.tfvars.test.pipeline terraform.tfvars
-
 # init
 terraform init
 # see execution plan
