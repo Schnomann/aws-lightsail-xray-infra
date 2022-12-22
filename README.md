@@ -56,7 +56,7 @@ bash <(curl -Ls https://raw.githubusercontent.com/vaxilu/x-ui/master/install.sh)
 ## When IP is blocked
 ```sh
 # destroy previous static IP
-terraform destroy -target aws_lightsail_static_ip.ip
+terraform destroy -target random_integer.id -target aws_lightsail_static_ip.ip --auto-approve
 # attach a new IP
 terraform apply -auto-approve -target aws_lightsail_static_ip_attachment.attachment
 ```
