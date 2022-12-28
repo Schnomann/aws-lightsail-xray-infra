@@ -30,7 +30,7 @@ cp terraform.tfvars.test.pipeline terraform.tfvars
 - EU (Paris) (eu-west-3)
 - EU (Stockholm) (eu-north-1)
 
-Note that the smallest instance bundle is nano_2_0, but not all region have nano_2_0.
+Note that the smallest instance bundle is nano_2_0, but not all region has nano_2_0 as the smallest bundle.
 
 ### Create
 ```sh
