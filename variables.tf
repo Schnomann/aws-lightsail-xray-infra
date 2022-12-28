@@ -13,7 +13,7 @@ variable "aws_region" {
 variable "instance_name" {
   type        = string
   description = "The Instance Name"
-  default     = ""
+  default     = "example"
 }
 
 variable "blueprint_id" {
