@@ -22,6 +22,12 @@ terraform apply -auto-approve
 terraform destroy
 ```
 
+## Check Connectivity
+```sh
+nc -zv instance_ip 22
+```
+destroy & re-apply upon bad connectivity
+
 ## Install x-ui
 [x-ui](https://github.com/vaxilu/x-ui)
 ```sh
